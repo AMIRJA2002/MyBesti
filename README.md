@@ -30,6 +30,12 @@
 │       │   └── health.py
 │       ├── __init__.py
 │       └── router.py
+├── users/
+│   ├── __init__.py
+│   ├── handlers.py
+│   ├── models.py
+│   ├── schemas.py
+│   └── services.py
 ├── telegram_app/
 │   ├── services/
 │   │   ├── __init__.py
@@ -40,7 +46,7 @@
 │   └── __init__.py
 ├── main.py
 ├── manage.py
-├── .env.example
+├── .env
 ├── requirements.txt
 ├── Dockerfile
 └── docker-compose.yml
@@ -50,14 +56,9 @@
 
 ### با Docker
 
-1. فایل `.env` را از `.env.example` کپی کنید:
-```bash
-cp .env.example .env
-```
+1. تنظیمات Telegram را در `.env` وارد کنید
 
-2. تنظیمات Telegram را در `.env` وارد کنید
-
-3. پروژه را اجرا کنید:
+2. پروژه را اجرا کنید:
 ```bash
 docker-compose up -d
 ```
