@@ -21,3 +21,8 @@ class UserService:
             last_interaction=datetime.now(),
         )
         await user.create()
+
+
+async def process_user_message(user_id: Any, text: str) -> None:
+    """Placeholder for processing incoming messages."""
+    _ = user_id, text
