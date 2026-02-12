@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
+import logging
 
 from beanie import init_beanie
 
@@ -9,6 +10,19 @@ from core.database import db
 from core.telegram import telegram
 from api.v1.router import api_router
 from users.models import User
+
+
+def setup_logging() -> None:
+    root_logger = logging.getLogger()
+    if root_logger.handlers:
+        return
+    logging.basicConfig(
+        level=getattr(logging, settings.LOG_LEVEL.upper(), logging.INFO),
+        format="%(asctime)s %(levelname)s %(name)s: %(message)s",
+    )
+
+
+setup_logging()
 
 
 @asynccontextmanager

@@ -14,6 +14,7 @@ class Settings(BaseSettings):
     APP_VERSION: str = "1.0.0"
     DEBUG: bool = True
     ENVIRONMENT: str = "development"
+    LOG_LEVEL: str = "INFO"
     
     # Server
     HOST: str = "0.0.0.0"
